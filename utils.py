@@ -44,7 +44,7 @@ def sanitize(text: str) -> str:
     edited_text = re.sub(
         "  ", " ", text
     )  # replace double whitespace with single whitespace
-    ##edited_text = re.sub("@(?=.*\w)[\w]{1,15}", "", edited_text) # remove twitter handle
+    edited_text = re.sub("@(?=.*\w)[\w]{1,15}", "username", edited_text) # remplace twitter username by token
     edited_text = re.sub(
         url_re, "", edited_text
     )  # remove URL
